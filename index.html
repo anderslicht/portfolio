@@ -3,28 +3,38 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>øvelse 4</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Index page</title>
   </head>
   <body>
     <div class="container">
       <header>
-        The header
+        <img class="logo-small" src="billeder/logo.svg" alt="Logo">
+
+        <h1 class="site-title">ANDERS LICHT</h1>
+
+        <div class="nav-menus"> <!-- container til de 2 typer af navigations menuer-->
+          <div class="nav-burger-img-container">
+            <img class="nav-burger-img" src="billeder/burger-menu.svg" alt="burger menu billede">
+          </div>
+          <nav class="menu-list">
+            <li>Kontakt</li>
+            <li>Om mig</li>
+            <li>Portfolio</li>
+          </nav>
+        <div/>
       </header>
-      <nav>
-        <ul class="nav-ul">
-          <li>Nav 1</li>
-          <li>Nav 2</li>
-          <li>Nav 3</li>
-        </ul>
-      </nav>
-      <div class="sidebar">
-        sidebar
-      </div>
+
       <main>
-        main article area
+        <div class="content content-1">
+          <button type="button" name="read more" class="content-btn-L">Se nærmere</button>
+        </div>
+
+        <div class="content content-2">
+         <button type="button" name="read more" class="content-btn-R">Se nærmere</button>
+        </div>
+
       </main>
-      <footer>The footer</footer>
-    </div>
+    </div>  <!--container-->
   </body>
 </html>
