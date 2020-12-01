@@ -25,38 +25,32 @@ body {
   "ft ft ft";
 }
 
-.sidebar {
-padding: 5px;
-  background-color: #228CDB;
-  border-radius: 10px;
-  grid-area: sd;
-}
-
 /* Header begin */
 
 header {
   max-height: 100px; /* sørger for at headeren ikke skalere med browseren */
-  background-color: #3EFF8B;
   padding: 0;
-  grid-area: hd;
   display: flex;
   justify-content: space-between;
+  background-color: #3EFF8B;
+  grid-area: hd;
 }
 
-.logo-small {
+.logo-100px {
   height: 100px;  /*højden af denne bestemmer højden af headeren*/
 }
 
 .site-title {
-  align-self: center;
   margin: auto 0;
+  padding-left: 10px;
+  align-self: center;
   font-size: 2rem;
 }
 
 .nav-menus {
-  display: flex;
   height: 100%;
   width: 33%;
+  display: flex;
   position: relative;
 }
 
@@ -99,9 +93,13 @@ header {
   .logo-small {
     height: 50px;
   }
+
+  .site-title {
+    font-size: 1.5rem;
+  }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1050px) {
   .nav-burger-img {
     visibility: hidden;
   }
