@@ -1,0 +1,137 @@
+/* variabler */
+:root {
+  --burger-size: 40px;
+}
+
+.burger-wrapper {
+  /* width: 75px; */
+  width: var(--hd-height);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+}
+
+/* selve checkbox "boxen" */
+.burger-wrapper .toggler {
+  position: absolute;
+  cursor: pointer;
+  width: var(--burger-size);
+  height: var(--burger-size);
+  opacity: 0;
+  z-index: 2;
+}
+
+/* de 3 visuelle streger */
+.burger-wrapper .hamburger {
+  position: absolute;
+  width: var(--burger-size);
+  height: var(--burger-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* hamburger line */
+.burger-wrapper .hamburger > div {
+  position: relative;
+  width: 75%;
+  height: 4.5px;
+  background-color: var(--mygrey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  border-radius: 2.25px;
+}
+
+/* top and bottom lines */
+.burger-wrapper .hamburger > div:before,
+.burger-wrapper .hamburger > div:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: inherit;
+  background: inherit;
+  border-radius: inherit;
+}
+
+/* moves line down */
+.burger-wrapper .hamburger > div:after {
+  top: 10px;
+}
+
+/* toggler animation */
+.burger-wrapper .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+/* turns lines into X */
+.burger-wrapper .toggler:checked + .hamburger > div:before,
+.burger-wrapper .toggler:checked + .hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* show menu */
+.burger-wrapper .toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+.burger-wrapper .toggler:checked ~ .menu > div {
+  transform: scale(1);
+  transition-duration: 1s;
+}
+
+.burger-wrapper .toggler:checked ~ .menu > div {
+  opacity: 1;
+  transition: opacity 0.4s ease 0.4s;
+}
+
+.burger-wrapper .menu {
+  position: fixed;
+  top: var(--hd-height);
+  right: 0;
+  width: 200px;
+  background-color: var(--mygreen);
+  height: auto;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -4px 4px;
+  border-radius: 0px 0px 0px 4px;
+}
+
+.burger-wrapper .menu > div > ul {
+  list-style: none;
+}
+
+.burger-wrapper .menu > div > ul > li {
+  font-size: 3rem;
+  padding: 1.5rem;
+}
+
+.burger-wrapper .menu > div > ul > li > a {
+  text-decoration: none;
+  color: var(--mygrey);
+}
+
+/* tablet bredde */
+@media (min-width: 800px) {
+
+}
+
+/* desktop bredde*/
+@media (min-width: 1200px) {
+
+  .burger-wrapper .toggler:checked ~ .menu {
+    visibility: hidden;
+  }
+
+}

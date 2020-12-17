@@ -1,175 +1,281 @@
-/* Layout */
-html {
-  height: 100%;
+/* font import: */
+@import url("https://fonts.googleapis.com/css2?family=Biryani:wght@600&display=swap");
+
+/* variabler */
+:root {
+  --hd-height: 75px;
+  --mygreen: #3EFF8B;
+  --mygrey: #303030;
+  --desktop-bredde: 1200px;
+  --tablet-bredde: 800px;
+  --about-bredde: 500px;
 }
 
-body {
-  height: 100%;
+
+/* reset */
+* {
   margin: 0;
   padding: 0;
+  font-size: 1em;
+  font-family: Biryani, sans-serif;
   line-height: 1;
-  color: black;
-  background: #474747;
-  font-family: sans-serif;
-  }
-
-.container {
   height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto 1fr auto; /*header og footer hver 1 fraktion høj, Main udfylder resten */
-  grid-template-areas:
-  "hd hd hd"
-  "main main main"
-  "ft ft ft";
 }
 
-/* Header begin */
+html {
+  font-size: 62.5%; /* skriftstørrelse 10px */
+  height: 100vh;
+  background-color: var(--mygrey);
+}
+
+.flex-wrapper {
+  display: flex;
+  flex-direction: column;
+}
 
 header {
-  max-height: 100px; /* sørger for at headeren ikke skalere med browseren */
-  padding: 0;
+  height: var(--hd-height);
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: #3EFF8B;
-  grid-area: hd;
+  align-items: center;
+  background-color: var(--mygreen);
+  position: fixed;
+  z-index: 1;
+  box-shadow: 0px 5px 2px;
 }
 
-.logo-100px {
-  height: 100px;  /*højden af denne bestemmer højden af headeren*/
+#header-title {
+  font-size: 2.5rem;
+  height: auto;
+  position: absolute;
+  left: 110px;
 }
 
-.site-title {
-  margin: auto 0;
-  padding-left: 10px;
-  align-self: center;
+.nav-wrapper {
+  background-color: var(--mygreen);
+  width: 75px;
+}
+
+.nav-list {
+  visibility: hidden;
+  display: flex;
+  width: auto;
+  height: auto;
+  list-style: none;
+}
+
+.nav-list li {
+  padding: 0 1rem;
   font-size: 2rem;
 }
 
-.nav-menus {
-  height: 100%;
-  width: 33%;
+.nav-list li a {
+  text-decoration: none;
+  color: var(--mygrey)
+}
+
+/* !!! "main" styling til index siden !!! */
+.index {
   display: flex;
+  flex-direction: column;
+  background-color: var(--mygrey);
   position: relative;
-}
-
-.nav-burger-img-container {
-  height: 100%;
+  top: var(--hd-height);
+  height: auto;
   width: 100%;
-  display:flex;
 }
 
-.nav-burger-img {
-  height: 30px;
-  position: absolute;
-  right: 20%;
+.content {
+  height: 45vh;
+  width: 100%;
+  max-width: 1500px;
+  background-color: var(--mygrey);
+  position: relative;
   align-self: center;
 }
 
-.nav-container {
-
+.content-btn-R {
+  right: 5%;
 }
 
-.menu-list {
+.content-btn-L {
+  left: 5%;
+}
+
+.content-btn {
+  height: auto;
+  padding: 0.75rem 0.5rem 0.5rem 0.5rem;
+  font-size: 1.5rem;
+  background-color: var(--mygreen);
+  font-weight: bold;
+  position: absolute;
+  bottom: 35%;
+  border-radius: 4px;
+  border-style: none;
+  box-shadow: 4px 4px;
+}
+
+
+/* ommig.html */
+
+/* !!!main styling til about side!!! */
+.about {
   display: flex;
-  justify-content: space-between;
-  padding: 0;
-  margin: 0;
+  flex-direction: column;
+  background-color: var(--mygrey);
+  position: relative;
+  flex-grow: 1;
   width: 100%;
   height: 100%;
-  list-style: none;
-  position: absolute;
-  right: 20px;
-  visibility: hidden;
-
 }
 
-.menu-list li {
+.about-wrapper {
+  position: relative;
+  width: auto;
+  max-width: var(--about-bredde);
+  display: flex;
+  flex-direction: column;
   align-self: center;
 }
 
-@media (max-height: 675px) {
-  .logo-small {
-    height: 50px;
+/* profilbillede */
+.about-wrapper > img {
+  height: 200px;
+  position: absolute;
+  bottom: 0;
+  right: 40px;
+}
+
+#text-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: var(--hd-height);
+  width: 80%;
+  max-width: 500px;
+  height: auto;
+  align-self: center;
+  text-align: center;
+  margin: 30px 0;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 4px 4px 2px;
+  background-color: var(--mygreen)
+}
+
+/* "hvem er jeg?" headeren */
+#text-wrapper > h1 {
+  position: relative;
+  height: auto;
+  width: auto;
+  font-size: 3rem;
+  align-self: center;
+  margin-bottom: 1rem;
+}
+
+#text-wrapper > p {
+  position: relative;
+  height: auto;
+  width: auto;
+  font-size: 1.5rem;
+}
+
+/* kontakt.html */
+
+/* !!!main styling til about side!!! */
+.contact {
+  background-color: var(--mygrey);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.contact-wrapper {
+  height: auto;
+  width: auto;
+  background-color: var(--mygreen);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  top: var(--hd-height);
+  margin-top: 30px;
+  border-radius: 4px;
+  box-shadow: 4px 4px 2px;
+
+}
+
+.contact-info {
+  position: relative;
+  height: auto;
+  width: 275px;
+  margin: 0;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-icon {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  background-color: var(--mygrey);
+}
+
+.contact-info p {
+  font-size: 2rem;
+  height: auto;
+  padding-top: 0.5rem;
+  margin-left: 5px;
+}
+/* tablet bredde */
+@media (min-width: 800px) {
+  header {
+    align-self: center;
   }
 
-  .site-title {
-    font-size: 1.5rem;
+  main {
+    align-self: center;
   }
 }
 
-@media (min-width: 1050px) {
-  .nav-burger-img {
+/* desktop bredde */
+@media (min-width: 1200px) {
+  header {
+    max-width: var(--desktop-bredde);
+    align-self: center;
+    border-radius: 0px 0px 4px 0px;
+  }
+
+  main {
+    align-self: center;
+    max-width: var(--desktop-bredde);
+    width: 100%;
+  }
+
+ .content {
+   align-self: center;
+   width: 100%;
+ }
+
+  .burger-wrapper {
     visibility: hidden;
   }
 
-  .menu-list {
+  .nav-wrapper {
+    width:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-list {
     visibility: visible;
   }
-}
 
-
-/* HEADER end */
-
-/* Main content område for index siden start */
-main {
-  height: 100%;
-  width: auto;
-  background: #474747;
-  border-radius: 10px;
-  grid-area: main;
-}
-
-.content { /* denne sættes på div classes der skal bruges til at indeholde et preview og en se nærmere knap*/
-  height: 50%;
-  min-height:150px;
-}
-
-.content-1 {  /*dette er hvor se nærmere knappen er til venstre. denne class er mere for det visuelle*/
-  background-color: pink;
-  position: relative;
-}
-
-.content-2 {  /*dette er hvor se nærmere knappen er til højre. denne class er mere for det visuelle*/
-  background-color: yellow;
-  position: relative;
-}
-
-.content-btn-L { /* class til knappen "se nærmere" i venstre side  */
-  /*height: 2.5rem;*/
-  padding: 0.5rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  position: absolute;
-  left: 15%;
-  bottom: 20px;
-  background-color: #3EFF8B;
-
-}
-
-.content-btn-R { /* class til knappen "se nærmere" i højre side  */
-  /*height: 2.5rem;*/
-  padding: 0.5rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  position: absolute;
-  right: 15%;
-  bottom: 20px;
-  background-color: #3EFF8B;
-
-}
-
-/* Main content område for index siden slut */
-
-.nav-ul {
-  list-style: none;
-  width: 100%;
-  padding: 0;
-  margin:0;
-  background-color: #ff3eb2;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
 }
